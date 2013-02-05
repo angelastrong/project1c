@@ -8,7 +8,7 @@
 <h2>Add new movie:</h2>
 <FORM METHOD = "POST" ACTION = "./i3.php">
   Title:
-  <INPUT TYPE="text" NAME="title" VALUE="" SIZE=20 MAXLENGTH=50> <br>
+  <INPUT TYPE="text" NAME="title" VALUE="" SIZE=20 MAXLENGTH=100> <br>
   Company:
   <INPUT TYPE="text" NAME="company" VALUE="" SIZE=20 MAXLENGTH=50> <br>
   Year:
@@ -69,6 +69,9 @@ $didi = mysql_query("SELECT id FROM Director WHERE first='$dname[0]' && last='$d
     mysql_query("INSERT INTO MovieGenre (mid,genre) VALUES($newid,'$gname')");
   }
 
-  }?>
+  }
+mysql_close($db_connection);
+
+?>
 
   </html>

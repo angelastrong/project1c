@@ -38,15 +38,21 @@
 //Incrementing MaxPersonID
   $MaxPersonIDResult = mysql_query('SELECT id FROM MaxPersonID',$db_connection); //get MaxPersonID, MaxPersonIDResult is an array
   $MaxPersonID = mysql_fetch_assoc($MaxPersonIDResult); //$MaxPersonID is now a number
-  $newMaxPersonID =  $MaxPersonId['id']+1; //Increment MaxPersonId
+  $newMaxPersonID =  $MaxPersonID['id']+1; //Increment MaxPersonId
   mysql_query("UPDATE MaxPersonID SET id=$newMaxPersonID"); //Update the incremented MaxPersonID
+
+//Sex change (haha)
+$sex = "Male";
+if($_POST[sex]==2){
+	$sex = "Female";
+}
 
 //if Actor was chosen
 if($_POST[identity]=='Actor'){
   if($_POST[dod]==''){ //if Date of Death was not set, dod=NULL
-    mysql_query("INSERT INTO Actor (id,last,first,sex,dob,dod) VALUES($newMaxPersonID,'$_POST[ln]','$_POST[fn]','$_POST[sex]','$_POST[dob]',NULL)"); 
+    mysql_query("INSERT INTO Actor (id,last,first,sex,dob,dod) VALUES($newMaxPersonID,'$_POST[ln]','$_POST[fn]','$sex','$_POST[dob]',NULL)"); 
   } else { //if Date of Death was set
-    mysql_query("INSERT INTO Actor (id,last,first,sex,dob,dod) VALUES($newMaxPersonID,'$_POST[ln]','$_POST[fn]','$_POST[sex]','$_POST[dob]','$_POST[dod]')"); //Inserting to Actor
+    mysql_query("INSERT INTO Actor (id,last,first,sex,dob,dod) VALUES($newMaxPersonID,'$_POST[ln]','$_POST[fn]','$sex','$_POST[dob]','$_POST[dod]')"); //Inserting to Actor
   }
 }
 
@@ -59,6 +65,10 @@ if($_POST[identity]=='Director'){
   }
 }    
 echo $_POST[identity]." added"; //show what was added             
-} ?>
+} 
+
+mysql_close($db_connection);
+
+?>
 
 </html>

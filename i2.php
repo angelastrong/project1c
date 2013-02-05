@@ -24,7 +24,7 @@
 
     <!-- Input your name, NAME is 'yn', default name is "Anonymous" -->
     Your Name:
-    <INPUT TYPE = "text" NAME="yn" VALUE="Anonymous" SIZE=15 MAXLENGTH=30> <br>
+    <INPUT TYPE = "text" NAME="yn" VALUE="Anonymous" SIZE=15 MAXLENGTH=20> <br>
 
     <!-- Select rating from Scroll Menu, NAME is 'rating' -->
     Rating:
@@ -38,7 +38,7 @@
 
     <!-- INPUT comments to TEXTAREA, NAME is 'comments'-->
     Comments: <br>
-    <TEXTAREA NAME = "comments" ROWS=5 COLS=30>
+    <TEXTAREA NAME = "comments" ROWS=5 COLS=30 MAXLENGTH=500>
       </TEXTAREA> <br>
       <INPUT TYPE="submit" VALUE="done">
 </FORM>
@@ -52,6 +52,9 @@
 	mysql_query("INSERT INTO Review (name,time,mid,rating,comment) VALUES('$_POST[yn]','$curtime' ,'$MovieId[id]',$rate,'$_POST[comments]')"); //Insert to Review
 echo "Added Comment";
 	}
+
+mysql_close($db_connection);
+
 ?>
 </html>
     

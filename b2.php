@@ -17,7 +17,10 @@ See Movie Info:
 <OPTION value="<?php 
 	echo $MovieInfo[1]; //value =id of the movie
 ?>" >  <?php echo $MovieInfo[0]; ?> </OPTION>
-      <?php } ?>
+      <?php }
+mysql_close($db_connection);
+
+ ?>
 </SELECT> <br>
 <INPUT TYPE="submit" VALUE="Search">
 </FORM>

@@ -17,7 +17,10 @@ See Actor Info:
 <OPTION value="<?php 
 	echo $ActorInfo[1];
 ?>" >  <?php echo $ActorInfo[0]; ?> </OPTION>
-      <?php } ?>
+      <?php } 
+mysql_close($db_connection);
+
+?>
 </SELECT> <br>
 <INPUT TYPE="submit" VALUE="Search">
 </FORM>

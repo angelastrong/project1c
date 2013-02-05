@@ -35,6 +35,8 @@
       }
 require_once 'b1.php';
 
+//mysql_close($db_connection);
+
 ?>
 
 

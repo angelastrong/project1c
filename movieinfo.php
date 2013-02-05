@@ -45,5 +45,7 @@ $MovieActorResult = mysql_query("SELECT * FROM MovieActor WHERE mid=$_GET[mid]")
 
 require_once 'b2.php';
 
+//mysql_close($db_connection);
+
 ?>
 </html>

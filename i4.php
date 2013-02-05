@@ -39,5 +39,8 @@ while($title2 = mysql_fetch_row($result2)){
   $insertaid = $acid['id'];
   mysql_query("INSERT INTO MovieActor (mid,aid,role) VALUES($insertmid,$insertaid,'$_POST[role]')");
 
-} ?>
+}
+mysql_close($db_connection);
+
+ ?>
   </html>
