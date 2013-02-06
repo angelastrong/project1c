@@ -3,7 +3,7 @@
 
 <head>
 	<link rel="stylesheet" href="./main.css" type="text/css" />
-	<title>Static Navigation</title>
+	<title>Movie Database</title>
 </head>
 
 <body>
