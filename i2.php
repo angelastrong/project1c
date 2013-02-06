@@ -1,4 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<link rel="stylesheet" href="./main.css" type="text/css" />
+	<title>Static Navigation</title>
+</head>
+
+<body>
+	<div id="navigation">
+		<a href= ./S1.php >Search</a>
+		<a href= ./I1.php >Add Actor/Director</a>
+		<a href= ./I2.php >Add Comments</a>
+		<a href= ./I3.php >Add Movie Info</a>
+		<a href= ./I4.php >Add Relations</a>
+		<a href= ./B1.php >Show Actor Info</a>
+		<a href= ./B2.php >Show Movie Info</a>
+	</div>
+
+<div id ="content">
 
   <?php 
     $db_connection = mysql_connect('localhost',"cs143",""); //connect to database
@@ -9,7 +28,7 @@
 <h2>Add new comment:</h2> <!-- header -->
 
 <!-- FORM to input datas, POST -->
-<FORM METHOD = "POST" ACTION = "./i2.php">
+<FORM METHOD = "POST" ACTION = "./I2.php">
   <!-- Select Movie from Scroll Menu, NAME is 'movie' -->
   Movie:
   <SELECT NAME="movie">
@@ -56,5 +75,7 @@ echo "Added Comment";
 mysql_close($db_connection);
 
 ?>
+</div>
+</body>
 </html>
     

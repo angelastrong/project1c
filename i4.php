@@ -1,4 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<link rel="stylesheet" href="./main.css" type="text/css" />
+	<title>Static Navigation</title>
+</head>
+
+<body>
+	<div id="navigation">
+		<a href= ./S1.php >Search</a>
+		<a href= ./I1.php >Add Actor/Director</a>
+		<a href= ./I2.php >Add Comments</a>
+		<a href= ./I3.php >Add Movie Info</a>
+		<a href= ./I4.php >Add Relations</a>
+		<a href= ./B1.php >Show Actor Info</a>
+		<a href= ./B2.php >Show Movie Info</a>
+	</div>
+
+<div id ="content">
 
   <?php 
     $db_connection = mysql_connect('localhost',"cs143",""); 
@@ -6,7 +25,7 @@
   ?>
 
 <h2>Add new actor in a movie:</h2>
-<FORM METHOD = "POST" ACTION = "./i4.php">
+<FORM METHOD = "POST" ACTION = "./I4.php">
   Movie:
   <SELECT NAME="movie">
   <?php
@@ -42,5 +61,7 @@ while($title2 = mysql_fetch_row($result2)){
 }
 mysql_close($db_connection);
 
- ?>
+?>
+</div>
+</body>
   </html>
