@@ -33,13 +33,13 @@ Search:
 if($_GET[search]==""){
 } else {
 	$search = $_GET[search];
-	$terms = str_word_count($search, 1);
+	$terms = explode(" ", $search);
 	$ActorClauses = array();
 	$MovieClauses = array();
 
 	echo "Searching Actor Database...";
 	print "<br>";
-	$len = str_word_count($search);
+	$len = count($terms);
 	$i = 0;
 	while ($i < $len) {
 		$ActorClauses[$i] = "(first LIKE '%".$terms[$i]."%' OR last LIKE '%".$terms[$i]."%')";
